@@ -8,6 +8,8 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+xcode-select --install
+
 # Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -29,7 +31,7 @@ brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
 
-brew tap homebrew/versions
+#brew tap homebrew/versions
 
 # Install `wget` with IRI support.
 brew install wget --with-iri
@@ -37,7 +39,7 @@ brew install wget --with-iri
 # Install more recent versions of some OS X tools.
 brew install vim --override-system-vi
 brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
+brew install homebrew/dupes/rsync
 
 # Install font tools.
 brew tap bramstein/webfonttools

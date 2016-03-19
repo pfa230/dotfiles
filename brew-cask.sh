@@ -11,6 +11,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# Put applications to /Applications instead of ~/Applications
+export HOMEBREW_CASK_OPTS="--appdir=/Application"
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
@@ -18,6 +21,9 @@ brew update
 brew upgrade --all
 
 brew tap caskroom/cask
+brew tap caskroom/versions
+
+brew install homebrew/completions/brew-cask-completion
 
 brew cask install adobe-reader
 brew cask install alfred
@@ -29,6 +35,7 @@ brew cask install google-chrome
 brew cask install insomniax
 brew cask install karabiner
 brew cask install seil
+brew cask install intellij-idea-ce
 brew cask install moom
 brew cask install mysqlworkbench
 brew cask install limechat
@@ -37,9 +44,14 @@ brew cask install grandperspective
 brew cask install password-gorilla
 brew cask install skype
 brew cask install spectacle
-brew cask install sublime-text
+brew cask install sublime-text3
+brew cask install sublime-text3
 brew cask install telegram
 brew cask install vlc
 brew cask install viber
 brew cask install istat-menus
 brew cask install iterm
+brew cask install lastpass
+
+brew cleanup
+brew cask cleanup
